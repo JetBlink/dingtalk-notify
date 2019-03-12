@@ -26,7 +26,7 @@ composer require jetblink/dingtalk-notify -vvv
 ### 获取实例
 
   ```
-   $dingTalk = new DingtalkNotify(getenv('DINGTALK_ROBOT_TOKEN'));
+$dingTalk = new \JetBlink\DingtalkNotify\DingtalkNotify('your_dingtalk_robot_token');
   ```
 
 ### 发送消息
@@ -84,4 +84,3 @@ $dingTalk->sendLinkMessage(
 ## License
 
 [MIT](https://opensource.org/licenses/MIT)
-
