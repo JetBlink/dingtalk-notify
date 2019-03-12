@@ -1,0 +1,21 @@
+{
+  "name": "jetblink/dingtalk-notify",
+  "description": "The dingtalk notify component.",
+  "type": "library",
+  "keywords": ["dingtalk", "robot", "notify", "message", "sdk", "api"],
+  "license": "MIT",
+
+  "require": {
+    "php": ">=7.1.3"
+  },
+
+  "require-dev": {
+    "phpunit/phpunit": "^5.4"
+  },
+
+  "autoload": {
+    "psr-4": {
+      "JetBlink\\DingtalkNotify\\": "src/"
+    }
+  }
+}
