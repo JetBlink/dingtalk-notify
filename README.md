@@ -5,6 +5,13 @@
 
 * [Installation](#Installation)
 * [Usage](#Usage)
+  * [获取实例](#获取实例)
+  * [发送消息](#发送消息)
+    * [发送原始消息](#发送原始消息)
+    * [发送文本消息](#发送文本消息)
+    * [发送Markdown消息](#发送Markdown消息)
+    * [发送链接消息](#发送链接消息)
+  * [Tips](#Tips)
 
 ## Installation
 
@@ -20,7 +27,7 @@ composer require jetblink/dingtalk-notify -vvv
    $dingTalk = new DingtalkNotify(getenv('DINGTALK_ROBOT_TOKEN'));
   ```
 
-### 发送机器人通知
+### 发送消息
 
 #### 发送原始消息
 
