@@ -39,7 +39,10 @@ class DingtalkNotifyTest extends \PHPUnit_Framework_TestCase
 
     public function testSendMarkdownMessage()
     {
-        $this->dingTalk->sendMarkdownMessage('Markdown Test Title', "### Markdown 测试消息\n* 谷歌: [Google](https://www.google.com/)\n* 一张图片\n ![](https://avatars0.githubusercontent.com/u/40748346)");
+        $this->dingTalk->sendMarkdownMessage(
+            'Markdown Test Title',
+            "### Markdown 测试消息\n* 谷歌: [Google](https://www.google.com/)\n* 一张图片\n ![](https://avatars0.githubusercontent.com/u/40748346)"
+        );
     }
 
     public function testSendLinkMessage()

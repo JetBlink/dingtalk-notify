@@ -128,10 +128,10 @@ class DingtalkNotify
     }
 
     /**
-     * @param $title
-     * @param $text
-     * @param $messageUrl
-     * @param string $picUrl
+     * @param string $title 标题
+     * @param string $text 消息内容
+     * @param string $messageUrl 消息链接
+     * @param string $picUrl 消息图片
      *
      * @throws \Exception
      */
