@@ -53,31 +53,30 @@ class DingtalkNotify
             $response = $this->httpClient->post($this->apiUrl, [
                 RequestOptions::JSON => $msg,
             ]);
-
-            $code = $response->getStatusCode();
-            $response = $response->getBody()->getContents();
-
-            if ($code != 200) {
-                throw new \Exception('send dingTalk message failed, http code: ' . $code);
-            }
-
-            try {
-                $result = \GuzzleHttp\json_decode($response, true);
-
-                if (! isset($result['errcode']) || $result['errcode'] != 0) {
-                    throw new \Exception('send dingTalk message failed, result: ' . $response);
-                }
-
-                return ;
-            } catch (\Exception $e) {
-                throw new \Exception('send dingTalk message failed.');
-            }
-
         } catch (\GuzzleHttp\Exception\GuzzleException $e) {
-            throw new \Exception('send dingTalk message failed.', $e->getCode(), $e);
+            throw new \Exception('send dingTalk message failed, error: ' . $e->getMessage(), $e->getCode(), $e);
         } catch (\Throwable $e) {
-            throw new \Exception('send dingTalk message failed.', $e->getCode(), $e);
+            throw new \Exception('send dingTalk message failed, error: ' . $e->getMessage(), $e->getCode(), $e);
         }
+
+        $code = $response->getStatusCode();
+        $response = $response->getBody()->getContents();
+
+        if ($code != 200) {
+            throw new \Exception('send dingTalk message failed, http code: ' . $code);
+        }
+
+        try {
+            $result = \GuzzleHttp\json_decode($response, true);
+        } catch (\Exception $e) {
+            throw new \Exception('send dingTalk message failed, result: ' . $response);
+        }
+
+        if (! isset($result['errcode']) || $result['errcode'] != 0) {
+            throw new \Exception('send dingTalk message failed, result: ' . $response);
+        }
+
+        return ;
     }
 
     /**
