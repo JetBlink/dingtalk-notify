@@ -12,6 +12,8 @@
     * [发送Markdown消息](#发送markdown消息)
     * [发送链接消息](#发送链接消息)
   * [Tips](#Tips)
+* [官方文档](#官方文档)
+* [License](#license)
 
 ## Installation
 
@@ -74,5 +76,12 @@ $dingTalk->sendLinkMessage(
 
 文本消息和Markdown消息都支持**@指定手机号**和**@所有人**，参数位置见具体方法。
 
+## 官方文档
 
+* [自定义机器人](https://open-doc.dingtalk.com/docs/doc.htm?spm=a219a.7629140.0.0.karFPe&treeId=257&articleId=105735&docType=1)
+* [消息类型及数据格式](https://open-doc.dingtalk.com/docs/doc.htm?treeId=172&articleId=104972&docType=1)
+
+## License
+
+[MIT](https://opensource.org/licenses/MIT)
 
