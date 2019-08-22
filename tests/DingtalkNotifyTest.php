@@ -41,7 +41,7 @@ class DingtalkNotifyTest extends \PHPUnit_Framework_TestCase
     {
         $this->dingTalk->sendMarkdownMessage(
             'Markdown Test Title',
-            "### Markdown 测试消息\n* 谷歌: [Google](https://www.google.com/)\n* 一张图片\n ![](https://avatars0.githubusercontent.com/u/40748346)"
+            "### <font color='#ff0000'>red</font> <font color='#ffa500'>orange</font>\n* <font color='#008000'>green</font>: [Google](https://www.google.com/)\n* 一张图片\n ![](https://avatars0.githubusercontent.com/u/40748346)"
         );
     }
 
