@@ -57,7 +57,7 @@ $dingTalk->sendTextMessage('这是一条文本测试消息。');
 ```
 $dingTalk->sendMarkdownMessage(
     'Markdown Test Title',
-    "### Markdown 测试消息"
+    "### Markdown  <font color='#ff0000'>测试消息</font>"
 );
 ```
 
