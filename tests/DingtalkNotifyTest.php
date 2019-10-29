@@ -15,7 +15,7 @@ class DingtalkNotifyTest extends \PHPUnit_Framework_TestCase
     {
         parent::setUp();
 
-        $this->dingTalk = new DingtalkNotify(getenv('DINGTALK_ROBOT_TOKEN'));
+        $this->dingTalk = new DingtalkNotify(getenv('DINGTALK_ROBOT_TOKEN'), getenv('DINGTALK_ROBOT_SECRET'));
     }
 
     public function testSendMessage()

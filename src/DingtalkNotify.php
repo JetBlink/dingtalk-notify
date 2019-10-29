@@ -13,6 +13,11 @@ class DingtalkNotify
     protected $token;
 
     /**
+     * @var string $token DingTalk Token
+     */
+    protected $secret;
+
+    /**
      * @var HttpClient
      */
     protected $httpClient;
@@ -22,9 +27,11 @@ class DingtalkNotify
      */
     protected $apiUrl;
 
-    public function __construct($token, $apiUri = '')
+    public function __construct($token, $secret = '', $apiUri = '')
     {
         $this->token = $token;
+
+        $this->secret = $secret;
 
         if (empty($apiUri)) {
             $apiUri = 'https://oapi.dingtalk.com/robot/send?access_token=%s';
@@ -40,6 +47,13 @@ class DingtalkNotify
         ]);
     }
 
+    protected function sign($timestamp)
+    {
+        $stringToSign = $timestamp . "\n" . $this->secret;
+        $signData = base64_encode(hash_hmac('sha256', $stringToSign, $this->secret, true));
+        return rawurlencode($signData);
+    }
+
     /**
      * 发送原始消息
      *
@@ -50,7 +64,13 @@ class DingtalkNotify
     public function sendMessage($msg)
     {
         try {
-            $response = $this->httpClient->post($this->apiUrl, [
+            if (! empty($this->secret)) {
+                $timestamp = floor(microtime(true) * 1000);
+                $url = $this->apiUrl . '&timestamp=' . $timestamp . '&sign=' . $this->sign($timestamp);
+            } else {
+                $url = $this->apiUrl;
+            }
+            $response = $this->httpClient->post($url, [
                 RequestOptions::JSON => $msg,
             ]);
         } catch (\GuzzleHttp\Exception\GuzzleException $e) {

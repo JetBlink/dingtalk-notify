@@ -1,6 +1,6 @@
 {
   "name": "jetblink/dingtalk-notify",
-  "description": "The dingtalk notify component.",
+  "description": "简单易用的钉钉机器人通知(支持加签). Easy dingtalk robot notification sdk.",
   "type": "library",
   "keywords": ["dingtalk", "robot", "notify", "message", "sdk", "api"],
   "license": "MIT",

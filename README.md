@@ -1,5 +1,5 @@
 # DingTalk Notify
-钉钉机器人通知。dingtalk robot notification sdk.
+钉钉机器人通知(支持加签）。dingtalk robot notification sdk.
 
 ## Overview
 
