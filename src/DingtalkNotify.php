@@ -13,7 +13,7 @@ class DingtalkNotify
     protected $token;
 
     /**
-     * @var string $token DingTalk Token
+     * @var string $secret DingTalk secret
      */
     protected $secret;
 
