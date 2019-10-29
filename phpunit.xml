@@ -13,5 +13,6 @@
     </testsuites>
     <php>
         <env name="DINGTALK_ROBOT_TOKEN" value="your_robot_token"/>
+        <env name="DINGTALK_ROBOT_SECRET" value="your_robot_secret"/>
     </php>
 </phpunit>
