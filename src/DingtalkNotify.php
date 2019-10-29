@@ -47,6 +47,11 @@ class DingtalkNotify
         ]);
     }
 
+    public function setSecret($secret)
+    {
+        $this->secret = $secret;
+    }
+
     protected function sign($timestamp)
     {
         $stringToSign = $timestamp . "\n" . $this->secret;
